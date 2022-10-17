@@ -1,1 +1,0 @@
-# PaulStranis.github.io
