@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Regular Expressions</h2>
+
+<p>Do a global counting of a character in a text:</p>
+
+<input
+type = "text"
+id="userLetter"
+placeholder = "Specify a letter.">
+</input><br><br>
+
+<input
+type = "text"
+oninput = "letterCounting()"
+id = "userText"
+placeholder = "Write a text.">
+</input>
+
+<p id="demo">0</p>
+
+<script>
+
+function letterCounting() {
+
+    let text = document.getElementById("userText").value;
+    let letter = document.getElementById("userLetter").value;
+
+    if(letter === ""){
+        alert("Please specify a letter or a word.");
+        document.getElementById("userText").value = "";
+    };
+
+    const regex = new RegExp(letter, "gi");
+    let result = text.match(regex);
+
+    if(result == null){
+        result = [];
+    };
+    
+    document.getElementById("demo").innerHTML = result.length;
+
+};
+
+</script>
+
+</body>
+</html>
